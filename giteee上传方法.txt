@@ -1,0 +1,26 @@
+git init 
+作用：将当前文件夹变成一个git仓库，并创建一个.git隐藏文件夹，包含git的元数据和配置。 使用情况：若当前文件夹已包含.git（已经是一个git仓库），就不需要。 不包含则使用
+
+git remote add origin 
+目标仓库的ssh 作用：连接到目标的仓库。 疑问：为什么使用SSH，因为安全（加密），便捷（不要每次输入凭据）
+
+git pull origin master 
+作用：刷新，下载，将仓库中的东西下载到文件夹中。
+
+git add .
+文件.格式 eg：依赖.md 作用：将当前目录及其子目录中所有被修改或新增的文件添加到暂存区。
+
+git status 
+作用：查看工作区的当前状态。通过它，你可以快速了解哪些文件被修改、哪些文件被暂存、以及仓库的分支状态等信息。
+
+git commit -m "每次修改的信息（必须有）" 
+作用：提交操作。
+
+git pull origin master 
+作用：提交到远程仓库             上述是从头添加一个仓库，如果已经添加了，需要再次提交改变的部分，1. 先打开对应仓库的git bush 终端 2. git add 发生改变的文件.后缀   3. git commit -m "日志"  4.git bush origin master 提交到远程仓库     就可以了  ，除此之外，还有origin，什么分支，什么的还没搞懂。目前就上述内容
+
+
+git credential-manager reject https://gitee.com
+用于# Windows强制更新凭证（清除旧缓存），更新ID密码，注意你输入的用户名是邮箱 cm2041979185@163.com，但 Gitee 要求使用账户用户名（即你的 Gitee ID，如 chen-ming2003）。
+
+git push -u origin master
