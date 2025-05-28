@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>植物纹样鉴赏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: #210101;
+            border-bottom: 1px solid #ddd;
+        } */
+
+        /* .logo {
+            width: 40px;
+            height: 40px;
+            background: #666;
+            border-radius: 50%;
+        } */
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: all 0.3s;
+        }
+
+        .menu-item:hover {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            color: #333;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: none; /* 默认隐藏 */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            padding: 10px;
+        }
+
+        .card p {
+            padding: 10px;
+            text-align: center;
+            /* background: #f9f9f9; */
+            border-bottom: 1px solid black;
+        }
+
+        .active {
+            display: block;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #bc941d;
+            color: white;
+            /* position: fixed; */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* 控制图标之间的间距 */
+        }
+        
+        /* 竖杠分隔线样式 */
+        .divider {
+            height: 24px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* 通过margin调整竖杠位置 */
+            margin: 0 10px;
+        }
+        
+        /* 图标基础样式 */
+        .nav-icon {
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* 鼠标悬停效果 */
+        .nav-icon:hover {
+            color: #1abc9c;
+            transform: scale(1.1);
+        }
+        nav a{
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">HOME</a>
+        </div>
+        <div class="nav-icons">
+            <!-- 条形图标 -->
+            <i class="nav-icon fas fa-bars"></i>
+            
+            <!-- 竖杠分隔线 -->
+            <div class="divider"></div>
+            
+            <!-- 圆球图标 -->
+            <i class="nav-icon fas fa-circle"></i>
+        </div>
+    </nav>
+
+    <h1>植物装饰纹样</h1>
+
+    <div class="menu">
+        <div class="menu-item" data-target="peony">牡丹纹</div>
+        <div class="menu-item" data-target="flower">花草连纹</div>
+        <div class="menu-item" data-target="bamboo">花束飞蝶纹</div>
+    </div>
+
+    <!-- 牡丹纹内容 -->
+    <div id="peony" class="content active">
+        <div class="grid">
+            <!-- 重复8个卡片（两行） -->
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0102.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0103.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0104.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0105.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0106.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0107.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0108.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+             <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0109.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>           
+        </div>
+    </div>
+
+    <!-- 其他内容区块（结构相同） -->
+    <div id="flower" class="content">
+        <!-- 花草连纹内容 -->
+                <div class="grid">
+            <!-- 重复8个卡片（两行） -->
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0102.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0103.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0104.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0105.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0106.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0107.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0108.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+             <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0109.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>           
+        </div>
+    </div>
+    <div id="bamboo" class="content">
+        <!-- 竹子纹内容 -->
+                <div class="grid">
+            <!-- 重复8个卡片（两行） -->
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0102.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0103.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0104.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0105.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0106.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0107.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+            <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0108.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>
+             <div class="card">
+                <img src="picture/磁州窑纹样数据库—打标/植物纹/牡丹纹/birme-512x512/0109.jpg" alt="">
+                <p>唐代牡丹纹样</p>
+            </div>           
+        </div>
+    </div>
+
+    <script>
+        // 悬停切换功能
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('mouseover', function() {
+                // 隐藏所有内容
+                document.querySelectorAll('.content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                // 显示对应内容
+                const targetId = this.dataset.target;
+                document.getElementById(targetId).classList.add('active');
+            });
+
+            // 点击跳转（示例）
+            item.addEventListener('click', function() {
+                window.location.href = `/detail/${this.dataset.target}`;
+            });
+        });
+    </script>
+</body>
+</html>

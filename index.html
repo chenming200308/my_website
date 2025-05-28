@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>磁州窑大创网页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+        
+        header {
+            height: 10vh;
+            background: linear-gradient(to right, #bc941d, #bc941d);
+            color: #fff;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header a{
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #118e80;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #bc941d;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* 控制图标之间的间距 */
+        }
+        
+        /* 竖杠分隔线样式 */
+        .divider {
+            height: 24px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* 通过margin调整竖杠位置 */
+            margin: 0 10px;
+        }
+        
+        /* 图标基础样式 */
+        .nav-icon {
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        /* 鼠标悬停效果 */
+        .nav-icon:hover {
+            color: #1abc9c;
+            transform: scale(1.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        h1:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #bc941d;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .columns-container {
+            display: flex;
+            gap: 0px;
+            padding: 10px;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 40vh;
+            height: 90vh;
+
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+
+        }
+        
+        .column:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .column.bg-1 { background-image: url("picture/首页背景-1.png"); }
+        .column.bg-2 { background-image: url("picture/首页背景-2.png"); }
+        .column.bg-3 { background-image: url("picture/首页背景-3.png"); }
+        .column.bg-4 { background-image: url("picture/首页背景-4.png"); }
+        
+        /* 覆盖整个区域的链接 */
+        .overlay-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2; /* 确保在内容之上 */
+            cursor: pointer;
+        }
+        
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            z-index: 3; /* 在链接层之上 */
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .column:hover .content {
+            transform: translateY(-10px);
+        }
+        
+        .content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .content p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #bc941d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #bc941d;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            transform: translateY(-3px);
+        }
+        
+        .explanation {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .explanation h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .explanation p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #bc941d;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .columns-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .column {
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <div class="logo">HOME</div> -->
+        <div class="logo">
+            <a href="index.html">HOME</a>
+        </div>
+        <div class="nav-icons">
+            <!-- 条形图标 -->
+            <i class="nav-icon fas fa-bars"></i>
+            
+            <!-- 竖杠分隔线 -->
+            <div class="divider"></div>
+            
+            <!-- 圆球图标 -->
+            <i class="nav-icon fas fa-circle"></i>
+        </div>
+    </nav>
+    
+    <div class="container">
+        
+        <div class="columns-container">
+            <section class="column bg-1">
+                <!-- 覆盖整个区域的链接 -->
+                <a href="磁州窑网站一级页面.html" class="overlay-link"></a>
+                <div class="content">
+                    <a href="磁州窑网站一级页面.html" class="btn"></a>
+                </div>
+            </section>
+            
+            <section class="column bg-2">
+                <a href="磁州窑网站一级页面.html" class="overlay-link"></a>
+                <div class="content">
+
+                    <a href="磁州窑网站一级页面.html" class="btn"></a>
+                </div>
+            </section>
+            
+            <section class="column bg-3">
+                <a href="磁州窑网站一级页面.html" class="overlay-link"></a>
+                <div class="content">
+                    <a href="磁州窑网站一级页面.html" class="btn"></a>
+                </div>
+            </section>
+            
+            <section class="column bg-4">
+                <a href="磁州窑网站一级页面.html" class="overlay-link"></a>
+                <div class="content">
+                    <a href="磁州窑网站一级页面.html" class="btn"></a>
+                </div>
+            </section>
+        </div>
+    
+    <script>
+        // 添加悬停效果增强视觉反馈
+        document.querySelectorAll('.column').forEach(column => {
+            const link = column.querySelector('.overlay-link');
+            
+            column.addEventListener('mouseenter', () => {
+                column.style.transform = 'translateY(-10px)';
+                column.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
+            });
+            
+            column.addEventListener('mouseleave', () => {
+                column.style.transform = 'translateY(0)';
+                column.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.12)';
+            });
+            
+            // 点击效果
+            link.addEventListener('mousedown', () => {
+                column.style.transform = 'translateY(-5px) scale(0.98)';
+            });
+            
+            link.addEventListener('mouseup', () => {
+                column.style.transform = 'translateY(-10px)';
+            });
+        });
+    </script>
+</body>
+</html>
