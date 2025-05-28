@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>磁州窑大创网页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        body a{
+            text-decoration: none;
+            color: inherit;
+        }
+        header {
+            height: 5vh;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            text-align: left;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: #bc941d;
+            border-bottom: 1px solid #ddd;
+        }
+        .columns-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 1;
+            min-width: 250px;
+            height: 90vh;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-size: cover;     /* 覆盖整个盒子区域 */
+            background-position: center; /* 图片居中显示 */
+            
+        }
+        .column.bg-1 { background-image: url("picture/首页背景-1.png"); }
+        .column.bg-2 { background-image: url("picture/首页背景-2.png"); }
+        .column.bg-3 { background-image: url("picture/首页背景-3.png"); }
+        .column.bg-4 { background-image: url("picture/首页背景-4.png"); }
+        .right-text {
+            margin-left: auto;       /* 将右侧元素推到最右 */
+        }
+        .clean-link {
+            text-decoration: none;  /* 去掉下划线 */
+            color: inherit;        /* 继承父元素颜色 */
+            cursor: pointer;       /* 保持鼠标指针为手型 */
+        }    
+                    
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="logo"></div>
+    </nav>
+
+    <main>
+        <div class="columns-container" text-align: center;>
+            <section class="column bg-1" href="磁州窑网站一级页面.html">
+                <h1>
+                    <a href="磁州窑网站一级页面.html" class=".clean-link">植物装饰</a>
+                </h1>
+                <p>FLORAL MOTIFS</p>
+            </section>
+
+            <section class="column bg-2">
+                <h1>
+                    <a href="磁州窑网站一级页面.html" class=".clean-link">动物装饰</a>
+                </h1>
+                <p>ZOOMORPHIC MOTIFS</p>
+            </section>
+
+            <section class="column bg-3">
+                <h1>
+                    <a href="磁州窑网站一级页面.html" class=".clean-link">人物装饰</a>
+                </h1>                
+                <p>FIGURAL MOTIFS</p>
+            </section>
+
+            <section class="column bg-4">
+                <h1>
+                    <a href="磁州窑网站一级页面.html" class=".clean-link">文字装饰</a>
+                </h1>                        
+                <p>CALLIGRAPHIC MOTIFS</p>
+            </section>
+        </div>
+    </main>
+    
+</body>
